@@ -7,10 +7,10 @@
 - title: "Projects"
   href: "/projects/"
 
-- title: "Blog"
-  href: "/blog/"
+# - title: "Blog"
+#   href: "/blog/"
 
-- title: "CV"
+- title: "Resume"
   href: "/cv/"
 
 - title: "Miscellany"
