@@ -39,7 +39,8 @@ My research interests lie at the intersection of Natural Language Processing (NL
 	<li>
 		<b>HybridML-X: Optimized NLP and RL for Conversational AI and Team Dynamics</b><br>
 		Stony Brook University, Jan 2023 - Present<br>
-		<i>Alex Doboli/i><br>
+		<i>Alex Doboli</i><br>
+		Designed and implemented a hybrid ML pipeline integrating DistilBERT embeddings with gradient-boosted decision trees, improving accuracy by 24% and reducing computational overhead by 30%. Implemented NLP pipelines using CoreNLP, SpaCy, and Whisper for multi-modal conversational analytics. Researched SLU methodologies, focusing on transformer architectures for intent recognition and slot filling. Applied causal tracing and ROME for model interpretability in large language models. Contributed to an ONR project on team optimization using RL and multi-agent systems, improving performance by 22%.<br>
 		<a href=""><div class="color-button">report</div></a><a href=""><div class="color-button">code</div></a>
 	</li><br>
 </ul>
