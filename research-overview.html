@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Overview - Gnaneswar Villuri</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #3182ce;
+            --text-color: #2d3748;
+            --light-gray: #f7fafc;
+            --border-color: #e2e8f0;
+            --dark-gray: #4a5568;
+            --yellow-color: #ffcc00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Avenir Next', -apple-system, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: white;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: var(--light-gray);
+            padding: 1.25rem 0;
+            border-bottom: 2px solid var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .site-title {
+            font-size: 1.4rem;
+            font-weight: 650;
+            color: var(--primary-color);
+        }
+
+        .site-title a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.45rem 0.7rem;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+        }
+
+        nav a:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-title {
+            font-size: 1.05rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            margin-bottom: 0.6rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .content {
+            text-align: left;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin: 0.35rem 0;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            font-weight: 750;
+            margin: 2rem 0 0.85rem 0;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .subsection-title {
+            font-size: 1.05rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin: 1.25rem 0 0.6rem 0;
+        }
+
+        .callout {
+            background: var(--light-gray);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 10px;
+            padding: 1rem 1.1rem;
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="site-title">
+                <a href="index.html">Gnaneswar Villuri</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#vision">Vision</a></li>
+                    <li><a href="#themes">Themes</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <div class="page-title">Research Overview</div>
+            <h1>Neuro-symbolic &amp; Tool-Augmented LLMs for Reliable Reasoning</h1>
+        </div>
+
+        <div class="content">
+            <div class="callout">
+                I work on building and evaluating <strong>agentic, tool-augmented LLM systems</strong> that are <strong>more reliable</strong> in open-ended settings (coding, analysis, and decision support) by combining
+                <strong>symbolic structure</strong>, <strong>verification</strong>, and <strong>learning-based tool-use policies</strong>.
+            </div>
+
+            <p class="section-title" id="vision">Vision</p>
+            <p>
+                My goal is to make LLM agents <strong>trustworthy in the loop</strong>: they should externalize their reasoning into
+                <strong>tools</strong> (code, tests, search, structured checks), <strong>verify</strong> intermediate results, and
+                <strong>recover</strong> when things go wrong.
+            </p>
+
+            <p class="section-title" id="themes">Core themes</p>
+
+            <p class="subsection-title">1) Verification-aware prompting and pipelines</p>
+            <ul>
+                <li>Design generator–validator workflows that detect errors early and enforce explicit checks.</li>
+                <li>Use unit tests, static checks, and consistency constraints to reduce silent failures.</li>
+            </ul>
+
+            <p class="subsection-title">2) RL for tool-use policies</p>
+            <ul>
+                <li>Learn when to call tools, how to compose tool outputs, and when to backtrack.</li>
+                <li>Optimize for reliability metrics (accuracy under distribution shift, robustness, and calibration).</li>
+            </ul>
+
+            <p class="subsection-title">3) Neuro-symbolic representations for dialog + code</p>
+            <ul>
+                <li>Represent dialog and code with operational/axiomatic semantics to enable structured validation.</li>
+                <li>Combine symbolic constraints with neural generation to improve interpretability and correctness.</li>
+            </ul>
+
+            <p class="section-title" id="work">Selected work &amp; experience</p>
+
+            <p class="subsection-title">Graduate Research Assistant — Stony Brook University (01/2023–05/2027)</p>
+            <ul>
+                <li>Built LLM-based validation agents to detect errors in open-ended collaborative coding tasks.</li>
+                <li>Implemented verification-aware generator–validator pipelines for static and real-time evaluation.</li>
+                <li>Developed tool-augmented pipelines using knowledge graphs and multimodal NLP.</li>
+            </ul>
+
+            <p class="subsection-title">Applied Scientist Intern — Amazon AWS (09/2025–12/2025)</p>
+            <ul>
+                <li>Empirically evaluated the “GEPA” Automatic Prompt Optimization (APO) framework.</li>
+                <li>Benchmarked across 10 production LLMs (1B–405B), validating structured reasoning improvements up to 12%.</li>
+                <li>Analyzed cross-model prompt transfer (mid-sized → larger models) for reusable optimization.</li>
+            </ul>
+
+            <p class="subsection-title">ML Research Intern — Nokia Bell Labs (06/2025–08/2025)</p>
+            <ul>
+                <li>Developed a multi-agent LLM pipeline using OPC UA to extract insights from industrial telemetry.</li>
+                <li>Integrated knowledge graphs + function calling to correlate events across system layers.</li>
+            </ul>
+
+            <p class="section-title" id="publications">Publications</p>
+
+            <p class="subsection-title">2025</p>
+            <ul>
+                <li>
+                    Shaik, H., <strong>Villuri, G.</strong>, &amp; Doboli, A. (2025).
+                    <em>Two Large Language Model-based Methods to Validate Open-Ended Problem Solving in Teams.</em>
+                    <span>(AIMS 2025)</span>
+                </li>
+                <li>
+                    Shaik, H., <strong>Villuri, G.</strong>, &amp; Doboli, A. (2025).
+                    <em>An Overview of LLMs and a Novel, LLM-Based Cognitive Architecture for Solving Open-Ended Problems.</em>
+                    <a href="https://www.researchgate.net/profile/Hashmath-Shaik/publication/397222162_An_Overview_of_Large_Language_Models_and_a_Novel_Large_Language_Model-Based_Cognitive_Architecture_for_Solving_Open-Ended_Problems/links/691d5c10480eb767581ca041/An-Overview-of-Large-Language-Models-and-a-Novel-Language-Model-Based-Cognitive-Architecture-for-Solving-Open-Ended-Problems.pdf" target="_blank" rel="noopener noreferrer">(PDF)</a>
+                </li>
+                <li>
+                    Shaik, H., <strong>Villuri, G.</strong>, &amp; Doboli, A. (2025).
+                    <em>Concept Combinations with Generator and Validator Agents Prompted Using Insights from Concept Networks.</em>
+                    <a href="https://complexnetworks.org/" target="_blank" rel="noopener noreferrer">(Conference)</a>
+                </li>
+                <li>
+                    <strong>Villuri, G.</strong>, &amp; Doboli, A. (2025).
+                    <em>An Experimental Study on the Interpretability of Transformer Models for Dialog Understanding.</em>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/11050559" target="_blank" rel="noopener noreferrer">(IEEE)</a>
+                </li>
+                <li>
+                    <strong>Villuri, G.</strong>, Shaik, H., &amp; Doboli, A. (2025).
+                    <em>A Stacked Multi-Layered Perceptron - LLM Model for Extracting the Relations in Textual Descriptions.</em>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10977887" target="_blank" rel="noopener noreferrer">(IEEE)</a>
+                </li>
+                <li>
+                    <strong>Villuri, G.</strong>, Doboli, A., &amp; Pallapu, H. R. (2025).
+                    <em>Towards Semantic Classification: An Experimental Study on Automated Understanding of the Meaning of Verbal Utterances.</em>
+                    <span>(IEEE Annual Computing and Communication Workshop and Conference, 2025)</span>
+                </li>
+            </ul>
+
+            <p class="subsection-title">2024</p>
+            <ul>
+                <li>
+                    <strong>Villuri, G.</strong>, &amp; Doboli, A. (2024).
+                    <em>An Overview and Discussion of the Suitability of Existing Speech Datasets to Train Machine Learning Models for Collective Problem Solving.</em>
+                    <a href="https://arxiv.org/abs/2412.18489" target="_blank" rel="noopener noreferrer">(arXiv:2412.18489)</a>
+                </li>
+                <li>
+                    <strong>Villuri, G.</strong>, &amp; Doboli, A. (2024).
+                    <em>Using Speech Data to Automatically Characterize Team Effectiveness to Optimize Power Distribution in Internet-of-Things Applications.</em>
+                    <span>(IEEE CITDS 2024)</span>
+                </li>
+                <li>
+                    Pallapu, H. R., <strong>Villuri, G.</strong>, Doboli, A., &amp; Doboli, S. (2024).
+                    <em>Automatically Understanding Human Behavior for IoT Applications with Optimized Human-in-the-Loop Control.</em>
+                </li>
+                <li>
+                    <strong>Villuri, G.</strong>, &amp; Doboli, A. (2024).
+                    <em>Towards Semantic Classification of Dialog using Contextual Prediction Networks.</em>
+                    <a href="https://scholar.google.com/scholar?oi=bibs&cluster=17386138190231311895&btnI=1&hl=en" target="_blank" rel="noopener noreferrer">(Scholar)</a>
+                </li>
+            </ul>
+
+            <p class="section-title" id="contact">Contact</p>
+            <p>
+                Email: <a href="mailto:villurignanesh@gmail.com">villurignanesh@gmail.com</a>
+                &nbsp;|&nbsp; <a href="https://scholar.google.com/citations?user=R3QlsS8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+                &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/villurignanesh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </p>
+        </div>
+    </div>
+
+    <a href="#" class="back-to-top" id="backToTop">↑ Top</a>
+
+    <footer>
+        <p>&copy; 2025 Gnaneswar Villuri. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

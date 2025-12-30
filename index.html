@@ -1,33 +1,936 @@
----
-layout: default
----
+<html lang="en">
 
-<div class="home">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnaneswar Villuri</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #3182ce;
+            --text-color: #2d3748;
+            --light-gray: #f7fafc;
+            --border-color: #e2e8f0;
+            --dark-gray: #4a5568;
+            --yellow-color: #ffcc00;
+            --orange-color: #ff5c00;
+            --red-color: #ff2600;
+        }
 
-    <p>Hello there, and welcome to my homepage!<br><br>My name is &lt;Gnaneswar Villuri&gt;, and I am a &lt;PhD
-        Student&gt; at &lt;Stony Brook University&gt;. As a Graduate Research Assistant, I have made impactful
-        contributions to NLP and ML pipelines, enhancing accuracy while optimizing computational efficiency. My work
-        encompasses designing and implementing hybrid ML models, integrating cutting-edge NLP techniques, and advancing
-        model interpretability in large language models. By exploring the nuances of spoken language, I have helped
-        uncover and address linguistic ambiguities, driving more robust and intelligent AI systems.<br><br>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        I maintain a list of my publications, research projects and implementations under the <a
-            href="https://villurignanesh.github.io/academic-portfolio/research/">Research</a> tab, and a list of other
-        non-research projects under the <a
-            href="https://villurignanesh.github.io/academic-portfolio/projects/">Projects</a> tab. <br><br>
+        body {
+            font-family: 'Avenir Next', -webkit-system-fallback, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: white;
+        }
 
-        To get a better insight on my life so far, you can have a look at my <a
-            href="https://villurignanesh.github.io/academic-portfolio/cv/">resume</a>. Feel free to read
-        a bit more <a href="https://villurignanesh.github.io/academic-portfolio/about/">about me</a>.</p>
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-</div>
+        header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            /* margin-bottom: 3rem; */
+            padding-bottom: 1.0rem;
+            /* border-bottom: 2px solid var(--border-color); */
+            align-items: center;
+        }
 
-<!-- <h2>Updates</h2>
-<div class="updates" style="height: 10em; overflow-y: scroll;">
-    <ul>
-        <li><i>Month. Year</i> - Add updates in chronological order, such as paper acceptance, talk invitations,
-            internships, etc.</li>
-        <li><i>Month. Year</i> - This list is scrollable, with most recent updates at the top.
-    </ul>
+        .profile-section {
+            text-align: center;
+        }
 
-</div> -->
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 8px;
+            margin: 0 auto 1rem;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--secondary-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .header-content h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: var(--primary-color);
+        }
+
+        .header-content h2 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--primary-color);
+        }
+
+        .title {
+            font-size: 1rem;
+            color: var(--dark-gray);
+            margin-bottom: 0.9rem;
+            font-weight: 500;
+            /* font-style: italic; */
+            margin-left: 1rem;
+        }
+
+        .affiliation {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            font-weight: 500;
+            gap: 0.5rem;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            background: var(--light-gray);
+            padding: 0.8rem 0;
+            margin-bottom: 2rem;
+            /* margin-top: -2.0rem; */
+            border-radius: 8px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            padding: 0.2rem;
+        }
+
+        .cta-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.5rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 0.45rem 0.7rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: white;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .cta-btn.primary {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: white;
+        }
+
+        .cta-btn:hover {
+            filter: brightness(0.98);
+            text-decoration: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+            font-weight: 400;
+        }
+
+        .about-text {
+            font-size: 0.98rem;
+            line-height: 1.5;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            text-align: justify;
+        }
+
+        /* Add this rule to change the URL color */
+        .about-text a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .research-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1rem 0;
+            margin-bottom: -1rem;
+        }
+
+        .interest-tag {
+            background: var(--light-gray);
+            padding: 0.4rem 0.6rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Compact Publication Styles */
+        .publication {
+            background: white;
+            padding: 0.7rem;
+            margin-bottom: 0.7rem;
+            border-left: 3px solid var(--secondary-color);
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .publication-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.2rem;
+            line-height: 1.3;
+        }
+
+        /* Add this rule to change the URL color */
+        .publication-title a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .publication-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .publication-authors {
+            color: var(--dark-gray);
+            font-style: normal;
+            flex: 1;
+            min-width: 200px;
+            font-weight: 400;
+        }
+
+        .publication-authors strong {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .publication-venue {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .workshop-venue {
+            color: var(--secondary-color);
+            font-weight: 400;
+            font-style: italic;
+            font-size: 0.85rem;
+            padding-top: 0.3rem;
+        }
+
+        .workshop-award {
+            color: var(--secondary-color);
+            font-weight: 600;
+            /* font-style: italic; */
+            font-size: 0.85rem;
+            padding-top: 0.3rem;
+        }
+
+        .paper-award {
+            font-weight: 700;
+            color: var(--red-color);
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .publication-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 0.15rem 0.5rem;
+            border: 1px solid var(--accent-color);
+            border-radius: 3px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .publication-links a:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .material-links {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .material-links a {
+            color: var(--red-color);
+            text-decoration: none;
+            padding: 0.15rem 0.5rem;
+            border: 1px solid var(--red-color);
+            border-radius: 3px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .material-links a:hover {
+            background: var(--orange-color);
+            color: white;
+        }
+
+        .year-section {
+            margin-bottom: 1.2rem;
+        }
+
+        .year-header {
+            font-size: 1.2rem;
+            color: var(--yellow-color);
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+            border-left: 10px solid var(--yellow-color);
+            padding-left: 1rem;
+        }
+
+        .job-market-item {
+            padding-left: 1rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .education-item,
+        .experience-item,
+        .talk-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .education-item h3,
+        .experience-item h3,
+        .talk-item h3 {
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        .education-item h3 a,
+        .experience-item h3 a,
+        .talk-item h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .education-item h3 a:hover,
+        .experience-item h3 a:hover,
+        .talk-item h3 a:hover {
+            color: var(--secondary-color); /* or any color you like */
+            text-decoration: underline; /* optional for hover effect */
+            text-decoration: none;
+        }
+
+        .education-item .institution,
+        .experience-item .institution,
+        .talk-item .institution {
+            color: var(--secondary-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .education-item .institution a,
+        .experience-item .institution a,
+        .talk-item .institution a {
+            color: var(--secondary-color);
+            font-weight: 500;
+            text-decoration: none; /* optional: removes underline */
+        }
+
+        .education-item .year,
+        .experience-item .year,
+        .talk-item .year {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .talk-links {
+            color: var(--secondary-color);
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            padding-top: 0.3rem;
+        }
+
+        .talk-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 0.15rem 0.5rem;
+            border: 1px solid var(--accent-color);
+            border-radius: 3px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .talk-links a:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        #news {
+            max-height: 250px;
+            overflow-y: auto;
+            padding-left: 1rem;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        #news h2 {
+            margin-top: 0;
+        }
+
+        .news-item {
+            margin-bottom: 1em;
+            line-height: 1.5;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        .news-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        #news::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #news::-webkit-scrollbar-thumb {
+            background-color: #bbb;
+            border-radius: 4px;
+        }
+
+        #news::-webkit-scrollbar-thumb:hover {
+            background-color: #999;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .header-content h1 {
+                font-size: 2.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .publication-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+
+            .publication-authors {
+                min-width: auto;
+            }
+
+            .publication-links {
+                justify-content: flex-start;
+            }
+        }
+
+        .social-links {
+            margin-top: 8px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: #004499;
+            text-decoration: underline;
+        }
+
+        .social-links a::before {
+            margin-right: 5px;
+        }
+
+        .social-links a[href*="linkedin"]::before {
+            content: "💼";
+        }
+
+        .social-links a[href*="scholar"]::before {
+            content: "🎓";
+        }
+
+        .social-links a[href*="twitter"]::before {
+            content: "🐦";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <img src="static/avatar.png" alt="Gnaneswar Villuri Profile Picture" class="profile-img">
+            </div>
+            <div class="header-content">
+                <h2><b>Gnaneswar</b> <b style="color: var(--yellow-color);">Villuri</b> <span class="title">Ph.D.
+                        Candidate</span></h2>
+                <p class="affiliation">Stony Brook University</p>
+                <div class="contact-info">
+                    <span><b>Contact:</b> <a href="mailto:villurignanesh@gmail.com">villurignanesh@gmail.com</a> |
+                        <a href="https://scholar.google.com/citations?user=R3QlsS8AAAAJ&hl=en" target="_blank"
+                            rel="noopener noreferrer">Google Scholar</a> |
+                        <a href="https://www.linkedin.com/in/villurignanesh/" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a>
+                    </span>
+                </div>
+    
+            </div>
+        </header>
+
+        <nav style="padding-top: 0.5em; padding-bottom: 0.5em">
+            <ul>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#open-source" class="nav-link">Open Source</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="resume.html" class="nav-link">Resume</a></li>
+            </ul>
+        </nav>
+
+        <section id="about">
+            <div class="job-market-item" style="background: #ffffff;
+            border-left: 5px solid var(--secondary-color);
+            margin-top: -0.6em;
+            margin-bottom: 1.25em;
+            padding: 0.75em 0.9em;
+            border-radius: 6px;
+            width: 100%;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.08),
+                        0 3px 6px rgba(0,0,0,0.06);">
+                <strong style="color: var(--primary-color); font-size: 0.98em;">Resume</strong>
+                <span style="margin-left: 0.35em; font-weight: 500; font-size: 0.95em;">Web version + downloadable PDF.</span>
+                <div class="cta-links">
+                    <a class="cta-btn primary" href="resume.html" target="_blank" rel="noopener noreferrer">View Resume</a>
+                    <a class="cta-btn" href="static/CV.pdf" target="_blank" rel="noopener noreferrer">Download Resume (PDF)</a>
+                </div>
+            </div>
+
+            <p class="about-text">
+                AI researcher with experience at <b>Amazon AWS</b> and <b>Nokia Bell Labs</b>, focused on building and deploying
+                <b>agentic, tool-augmented LLM systems</b> that deliver measurable impact across production and research settings.
+            </p>
+
+            <p class="about-text">
+                <b>Research focus:</b> Neuro-symbolic and tool-augmented large language models for reliable reasoning, with an emphasis on
+                verification-aware prompting, reinforcement learning for tool-use policies, and agentic collaboration in open-ended coding and problem-solving tasks.
+            </p>
+
+            <p class="about-text">
+                For a longer-form view of my research direction, see <a href="research-overview.html">Research Overview</a>.
+            </p>
+
+            <div class="research-interests">
+                <span class="interest-tag">Agentic LLM Systems</span>
+                <span class="interest-tag">Tool Use</span>
+                <span class="interest-tag">Verification</span>
+                <span class="interest-tag">Reinforcement Learning</span>
+                <span class="interest-tag">Neuro-Symbolic AI</span>
+                <span class="interest-tag">NLP</span>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+
+            <div class="year-section">
+                <div class="year-header">2025</div>
+
+                <div class="publication">
+                    <div class="publication-title">
+                        Two Large Language Model-based Methods to Validate Open-Ended Problem Solving in Teams
+                    </div>
+                    <div class="publication-meta">
+                        <div class="publication-authors">Shaik, H., <strong>Villuri, G.</strong>, &amp; Doboli, A. (2025)</div>
+                        <div class="publication-venue"><em>Artificial Intelligence Models and Systems Symposium</em> (AIMS 2025)</div>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">
+                        An Overview of LLMs and a Novel, LLM-Based Cognitive Architecture for Solving Open-Ended Problems
+                    </div>
+                    <div class="publication-meta">
+                        <div class="publication-authors">Shaik, H., <strong>Villuri, G.</strong>, &amp; Doboli, A. (2025)</div>
+                        <div class="publication-venue"><em>Machine Learning and Knowledge Extraction</em>, 7(4), 134</div>
+                    </div>
+                    <div class="publication-links">
+                        <a href="https://www.researchgate.net/profile/Hashmath-Shaik/publication/397222162_An_Overview_of_Large_Language_Models_and_a_Novel_Large_Language_Model-Based_Cognitive_Architecture_for_Solving_Open-Ended_Problems/links/691d5c10480eb767581ca041/An-Overview-of-Large-Language-Models-and-a-Novel-Large-Language-Model-Based-Cognitive-Architecture-for-Solving-Open-Ended-Problems.pdf"
+                            target="_blank" rel="noopener noreferrer">PDF</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">
+                        Concept Combinations with Generator and Validator Agents Prompted Using Insights from Concept Networks
+                    </div>
+                    <div class="publication-meta">
+                        <div class="publication-authors">Shaik, H., <strong>Villuri, G.</strong>, &amp; Doboli, A. (2025)</div>
+                        <div class="publication-venue"><em>International Conference on Complex Networks</em></div>
+                    </div>
+                    <div class="publication-links">
+                        <a href="https://complexnetworks.org/" target="_blank" rel="noopener noreferrer">Conference</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">
+                        An Experimental Study on the Interpretability of Transformer Models for Dialog Understanding
+                    </div>
+                    <div class="publication-meta">
+                        <div class="publication-authors"><strong>Villuri, G.</strong>, &amp; Doboli, A. (2025)</div>
+                        <div class="publication-venue"><em>IEEE Conference on Artificial Intelligence</em> (CAI 2025)</div>
+                    </div>
+                    <div class="publication-links">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/11050559" target="_blank" rel="noopener noreferrer">IEEE</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">
+                        A Stacked Multi-Layered Perceptron - LLM Model for Extracting the Relations in Textual Descriptions
+                    </div>
+                    <div class="publication-meta">
+                        <div class="publication-authors"><strong>Villuri, G.</strong>, Shaik, H., &amp; Doboli, A. (2025)</div>
+                        <div class="publication-venue"><em>IEEE Symposium Series on Computational Intelligence</em> (SSCI 2025)</div>
+                    </div>
+                    <div class="publication-links">
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10977887" target="_blank" rel="noopener noreferrer">IEEE</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">
+                        Towards Semantic Classification: An Experimental Study on Automated Understanding of the Meaning of Verbal Utterances
+                    </div>
+                    <div class="publication-meta">
+                        <div class="publication-authors"><strong>Villuri, G.</strong>, Doboli, A., &amp; Pallapu, H. R. (2025)</div>
+                        <div class="publication-venue"><em>IEEE 15th Annual Computing and Communication Workshop and Conference</em> (2025)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <div class="year-header">2024</div>
+
+                <div class="publication">
+                    <div class="publication-title">
+                        An Overview and Discussion of the Suitability of Existing Speech Datasets to Train Machine Learning Models for Collective Problem Solving
+                    </div>
+                    <div class="publication-meta">
+                        <div class="publication-authors"><strong>Villuri, G.</strong>, &amp; Doboli, A. (2024)</div>
+                        <div class="publication-venue">arXiv preprint arXiv:2412.18489</div>
+                    </div>
+                    <div class="publication-links">
+                        <a href="https://arxiv.org/abs/2412.18489" target="_blank" rel="noopener noreferrer">arXiv</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">
+                        Using Speech Data to Automatically Characterize Team Effectiveness to Optimize Power Distribution in Internet-of-Things Applications
+                    </div>
+                    <div class="publication-meta">
+                        <div class="publication-authors"><strong>Villuri, G.</strong>, &amp; Doboli, A. (2024)</div>
+                        <div class="publication-venue"><em>IEEE 3rd Conference on Information Technology and Data Science</em> (CITDS 2024)</div>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">
+                        Automatically Understanding Human Behavior for IoT Applications with Optimized Human-in-the-Loop Control
+                    </div>
+                    <div class="publication-meta">
+                        <div class="publication-authors">Pallapu, H. R., <strong>Villuri, G.</strong>, Doboli, A., &amp; Doboli, S. (2024)</div>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <div class="publication-title">
+                        Towards Semantic Classification of Dialog using Contextual Prediction Networks
+                    </div>
+                    <div class="publication-meta">
+                        <div class="publication-authors"><strong>Villuri, G.</strong>, &amp; Doboli, A. (2024)</div>
+                        <div class="publication-venue"><em>Cognitive Computational Neuroscience</em> (CCN 2024)</div>
+                    </div>
+                    <div class="publication-links">
+                        <a href="https://scholar.google.com/scholar?oi=bibs&cluster=17386138190231311895&btnI=1&hl=en"
+                            target="_blank" rel="noopener noreferrer">Scholar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+
+            <div class="experience-item">
+                <h3>Graduate Research Assistant – Stony Brook University</h3>
+                <div class="year">01/2023 – 05/2027</div>
+                <div class="institution">
+                    Built LLM-based validation agents for collaborative coding, verification-aware generator–validator pipelines, neuro-symbolic dialogue/code representations, and tool-augmented LLM workflows with knowledge graphs and multimodal NLP.
+                    </div>
+                </div>
+
+            <div class="experience-item">
+                <h3>Applied Scientist Intern – Amazon AWS (Mountain View, CA)</h3>
+                <div class="year">09/2025 – 12/2025</div>
+                <div class="institution">
+                    Evaluated the “GEPA” Automatic Prompt Optimization (APO) framework across 10 production LLMs (1B–405B), validating up to 12% structured reasoning gains and analyzing cross-model prompt transfer.
+                    </div>
+                </div>
+
+            <div class="experience-item">
+                <h3>ML Research Intern – Nokia Bell Labs (Murray Hill, NJ)</h3>
+                <div class="year">06/2025 – 08/2025</div>
+                <div class="institution">
+                    Developed a multi-agent LLM pipeline using OPC UA for industrial telemetry insights; combined hierarchical agents, knowledge graphs, and function calling.
+                    </div>
+                </div>
+
+            <div class="experience-item">
+                <h3>Software Developer Intern – Zippi Delivery (Stony Brook, NY)</h3>
+                <div class="year">05/2024 – 08/2024</div>
+                <div class="institution">
+                    Built multi-agent automation (“Zippi”) with CrewAI (95% routing accuracy), hybrid LLM setup cutting costs by 40%, and webhook automation handling 10K+ daily interactions.
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="education-item">
+                <h3>SmartTutor: GraphRAG-based Learning Assistant</h3>
+                <ul>
+                    <li>Developed an AI-powered tutor leveraging GraphRAG, replacing traditional RAG with a knowledge graph for improved accuracy of 34% and enhanced interpretability.</li>
+                    <li>Processed 300 pages on Stereo Vision into a structured knowledge graph; achieved ~2s responses.</li>
+                    <li>Enabled real-time cache visualization for transparent retrieval.</li>
+                </ul>
+            </div>
+
+            <div class="education-item">
+                <h3>Language Neutralization System</h3>
+                <ul>
+                    <li>Architected a real-time translation system for call centers supporting 10+ languages with 95% accuracy.</li>
+                    <li>Constructed streaming pipeline (ASR → translation → TTS), reducing processing delay by 40%.</li>
+                    <li>Orchestrated deployment via Docker and exposed a websocket API.</li>
+                </ul>
+            </div>
+
+            <div class="education-item">
+                <h3>Agent Performance Platform</h3>
+                <ul>
+                    <li>Led platform development to analyze 1,000+ daily agent interactions with text classification.</li>
+                    <li>Fine-tuned model to attain 85% accuracy in identifying and scoring 15 distinct soft skill traits.</li>
+                    <li>Executed MLOps practices, accelerating model update time by 70% and improving overall accuracy by 10%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="open-source">
+            <h2>Open Source Contributions</h2>
+
+            <div class="education-item">
+                <h3>
+                    GEPA — Configurable DefaultAdapter eval (score + feedback)
+                    <span class="year">· Dec 2025</span>
+                </h3>
+                <ul>
+                    <li>
+                        Added a configurable per-example evaluator to <code>DefaultAdapter</code> and updated evaluation to return per-example score + feedback.
+                        <a href="https://github.com/gepa-ai/gepa/pull/147" target="_blank" rel="noopener noreferrer">PR #147</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="research-interests">
+                <span class="interest-tag">Python</span>
+                <span class="interest-tag">C++</span>
+                <span class="interest-tag">JavaScript</span>
+                <span class="interest-tag">SQL</span>
+                <span class="interest-tag">PyTorch</span>
+                <span class="interest-tag">TensorFlow</span>
+                <span class="interest-tag">Hugging Face</span>
+                <span class="interest-tag">LangChain</span>
+                <span class="interest-tag">Docker</span>
+                <span class="interest-tag">SageMaker</span>
+                <span class="interest-tag">MLflow</span>
+                <span class="interest-tag">Neo4j</span>
+                <span class="interest-tag">Qdrant</span>
+                <span class="interest-tag">Pinecone</span>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p class="about-text">
+                Email: <a href="mailto:villurignanesh@gmail.com">villurignanesh@gmail.com</a>
+                &nbsp;|&nbsp; <a href="https://scholar.google.com/citations?user=R3QlsS8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+                &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/villurignanesh/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </p>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Gnaneswar Villuri. Last updated: December 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+
+                        // Update active nav link
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Highlight active section in navigation
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Fade-in animation for sections
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            document.querySelectorAll('section, .publication').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+        });
+
+        // (Removed template-specific Chinese bio toggle.)
+    </script>
+</body>
+
+</html>
+</html>

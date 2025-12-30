@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Gnaneswar Villuri</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #3182ce;
+            --text-color: #2d3748;
+            --light-gray: #f7fafc;
+            --border-color: #e2e8f0;
+            --dark-gray: #4a5568;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Avenir Next', -apple-system, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: white;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: var(--light-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.25rem 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 650;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: var(--dark-gray);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1rem;
+            justify-content: flex-end;
+            text-align: right;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .actions {
+            margin-top: 0.9rem;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.55rem 0.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: white;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .btn.primary {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn:hover {
+            text-decoration: none;
+            filter: brightness(0.98);
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        section {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.25rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.35rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .item-title {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .item-meta {
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin: 0.25rem 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .skills-table td {
+            vertical-align: top;
+            padding: 0.45rem 0;
+        }
+
+        .skills-table td:first-child {
+            width: 230px;
+            font-weight: 700;
+            color: var(--primary-color);
+            padding-right: 0.75rem;
+        }
+
+        @media (max-width: 720px) {
+            .skills-table td:first-child {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="top-row">
+                <div>
+                    <h1>Gnaneswar Villuri</h1>
+                    <div class="subtitle">Lake Grove, USA · +1 (934) 642-0363</div>
+                </div>
+                <div class="links">
+                    <a href="mailto:villurignanesh@gmail.com">villurignanesh@gmail.com</a>
+                    <a href="https://scholar.google.com/citations?user=R3QlsS8AAAAJ&hl=en" target="_blank"
+                        rel="noopener noreferrer">Google Scholar</a>
+                    <a href="https://www.linkedin.com/in/villurignanesh/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="actions">
+                <a class="btn primary" href="static/CV.pdf" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a>
+                <a class="btn" href="index.html">Back to Home</a>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h2>Summary</h2>
+                <p>
+                    AI researcher with experience at <strong>Amazon AWS</strong> and <strong>Nokia Bell Labs</strong>,
+                    focused on building and deploying agentic, tool-augmented LLM systems that deliver measurable impact
+                    across production and research settings.
+                </p>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <div class="grid">
+                    <div>
+                        <div class="item-title">PhD in Computer Engineering, Stony Brook University (GPA: 4.0)</div>
+                        <div class="item-meta">08/2024 – 05/2027 (Expected)</div>
+                        <ul>
+                            <li><strong>Research Focus:</strong> Neuro-symbolic and tool-augmented large language models
+                                for reliable reasoning, with an emphasis on verification-aware prompting, reinforcement
+                                learning for tool-use policies, and agentic collaboration in open-ended coding and
+                                problem-solving tasks.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="item-title">MS in Computer Engineering, Stony Brook University (GPA: 3.8)</div>
+                        <div class="item-meta">08/2022 – 05/2024</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Skills</h2>
+                <table class="skills-table">
+                    <tr>
+                        <td>Programming</td>
+                        <td>Python, C++, JavaScript, SQL</td>
+                    </tr>
+                    <tr>
+                        <td>LLMs &amp; Reasoning</td>
+                        <td>Tool-Augmented &amp; Agentic Systems, Prompt Optimization (APO), Function Calling,
+                            Reinforcement Learning, Chain-of-Thought, Verification-Aware Reasoning</td>
+                    </tr>
+                    <tr>
+                        <td>Model Training &amp; Adaptation</td>
+                        <td>Fine-tuning (LoRA, QLoRA), Instruction Tuning, Evaluation &amp; Benchmarking</td>
+                    </tr>
+                    <tr>
+                        <td>Frameworks &amp; Libraries</td>
+                        <td>PyTorch, TensorFlow, Hugging Face, LangChain, NNsight, SpaCy, NLTK</td>
+                    </tr>
+                    <tr>
+                        <td>Multimodal &amp; Speech</td>
+                        <td>Automatic Speech Recognition (Whisper), Multimodal Pipelines (Text–Audio–Code)</td>
+                    </tr>
+                    <tr>
+                        <td>MLOps &amp; Deployment</td>
+                        <td>Git, Docker, Linux, MLflow, DVC, CML, SageMaker, Bedrock</td>
+                    </tr>
+                    <tr>
+                        <td>Data &amp; Knowledge Systems</td>
+                        <td>Vector Databases (Qdrant, Pinecone), Knowledge Graphs, Neo4j, GraphRAG</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section>
+                <h2>Publications</h2>
+                <div class="item-title">2025</div>
+                <ul>
+                    <li>
+                        Shaik, H., <strong>Villuri, G.</strong>, &amp; Doboli, A. (2025).
+                        <em>Two Large Language Model-based Methods to Validate Open-Ended Problem Solving in Teams.</em>
+                        <span class="item-meta">Artificial Intelligence Models and Systems Symposium (AIMS 2025).</span>
+                    </li>
+                    <li>
+                        Shaik, H., <strong>Villuri, G.</strong>, &amp; Doboli, A. (2025).
+                        <em>An Overview of LLMs and a Novel, LLM-Based Cognitive Architecture for Solving Open-Ended
+                            Problems.</em>
+                        <span class="item-meta">Machine Learning and Knowledge Extraction, 7(4), 134.</span>
+                        <a href="https://www.researchgate.net/profile/Hashmath-Shaik/publication/397222162_An_Overview_of_Large_Language_Models_and_a_Novel_Large_Language_Model-Based_Cognitive_Architecture_for_Solving_Open-Ended_Problems/links/691d5c10480eb767581ca041/An-Overview-of-Large-Language-Models-and-a-Novel-Large-Language-Model-Based-Cognitive-Architecture-for-Solving-Open-Ended-Problems.pdf"
+                            target="_blank" rel="noopener noreferrer"><strong>(MAKE 2025)</strong></a>
+                    </li>
+                    <li>
+                        Shaik, H., <strong>Villuri, G.</strong>, &amp; Doboli, A. (2025).
+                        <em>Concept Combinations with Generator and Validator Agents Prompted Using Insights from
+                            Concept Networks.</em>
+                        <span class="item-meta">International Conference on Complex Networks.</span>
+                        <a href="https://complexnetworks.org/" target="_blank"
+                            rel="noopener noreferrer"><strong>(Complex Networks 2025)</strong></a>
+                    </li>
+                    <li>
+                        <strong>Villuri, G.</strong>, &amp; Doboli, A. (2025).
+                        <em>An Experimental Study on the Interpretability of Transformer Models for Dialog
+                            Understanding.</em>
+                        <span class="item-meta">IEEE Conference on Artificial Intelligence (CAI 2025).</span>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/11050559" target="_blank"
+                            rel="noopener noreferrer"><strong>(CAI 2025)</strong></a>
+                    </li>
+                    <li>
+                        <strong>Villuri, G.</strong>, Shaik, H., &amp; Doboli, A. (2025).
+                        <em>A Stacked Multi-Layered Perceptron - LLM Model for Extracting the Relations in Textual
+                            Descriptions.</em>
+                        <span class="item-meta">IEEE Symposium Series on Computational Intelligence (SSCI 2025).</span>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/10977887" target="_blank"
+                            rel="noopener noreferrer"><strong>(SSCI 2025)</strong></a>
+                    </li>
+                    <li>
+                        <strong>Villuri, G.</strong>, Doboli, A., &amp; Pallapu, H. R. (2025).
+                        <em>Towards Semantic Classification: An Experimental Study on Automated Understanding of the Meaning of Verbal Utterances.</em>
+                        <span class="item-meta">IEEE 15th Annual Computing and Communication Workshop and Conference (2025).</span>
+                    </li>
+                </ul>
+
+                <div class="item-title">2024</div>
+                <ul>
+                    <li>
+                        <strong>Villuri, G.</strong>, &amp; Doboli, A. (2024).
+                        <em>An Overview and Discussion of the Suitability of Existing Speech Datasets to Train Machine Learning Models for Collective Problem Solving.</em>
+                        <span class="item-meta">arXiv:2412.18489.</span>
+                        <a href="https://arxiv.org/abs/2412.18489" target="_blank"
+                            rel="noopener noreferrer"><strong>(arXiv)</strong></a>
+                    </li>
+                    <li>
+                        <strong>Villuri, G.</strong>, &amp; Doboli, A. (2024).
+                        <em>Using Speech Data to Automatically Characterize Team Effectiveness to Optimize Power Distribution in Internet-of-Things Applications.</em>
+                        <span class="item-meta">IEEE 3rd Conference on Information Technology and Data Science (CITDS 2024).</span>
+                    </li>
+                    <li>
+                        Pallapu, H. R., <strong>Villuri, G.</strong>, Doboli, A., &amp; Doboli, S. (2024).
+                        <em>Automatically Understanding Human Behavior for IoT Applications with Optimized Human-in-the-Loop Control.</em>
+                    </li>
+                    <li>
+                        <strong>Villuri, G.</strong>, &amp; Doboli, A. (2024).
+                        <em>Towards Semantic Classification of Dialog using Contextual Prediction Networks.</em>
+                        <span class="item-meta">Cognitive Computational Neuroscience (CCN 2024).</span>
+                        <a href="https://scholar.google.com/scholar?oi=bibs&cluster=17386138190231311895&btnI=1&hl=en"
+                            target="_blank" rel="noopener noreferrer"><strong>(CCN 2024)</strong></a>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Research Experience</h2>
+                <div>
+                    <div class="item-title">Graduate Research Assistant – Stony Brook University</div>
+                    <div class="item-meta">01/2023 – 05/2027</div>
+                    <ul>
+                        <li>Built LLM-based validation agents to detect errors in open-ended collaborative coding tasks.
+                        </li>
+                        <li>Implemented verification-aware generator–validator pipelines for static and real-time team
+                            evaluation.</li>
+                        <li>Designed neuro-symbolic dialogue and code representations using operational and axiomatic
+                            semantics.</li>
+                        <li>Developed tool-augmented LLM pipelines with knowledge graphs and multimodal NLP.</li>
+                        <li>Created graph-augmented agent frameworks for relational reasoning and agentic collaboration.
+                        </li>
+                        <li>Applied reinforcement learning and multi-agent methods for tool-use and coordination
+                            policies.</li>
+                        <li>Led research on reliable LLM reasoning by integrating validation, symbolic structure, and
+                            agentic workflows, resulting in peer-reviewed publications across multiple venues.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Professional Experience</h2>
+                <div class="grid">
+                    <div>
+                        <div class="item-title">Applied Scientist Intern – Amazon AWS (Mountain View, CA)</div>
+                        <div class="item-meta">09/2025 – 12/2025</div>
+                        <ul>
+                            <li>Evaluated the “GEPA” Automatic Prompt Optimization (APO) framework for replacing
+                                hand-crafted prompts with automated optimization strategies.</li>
+                            <li>Validated structured reasoning accuracy improvements up to 12% via algorithmic search
+                                over instruction space.</li>
+                            <li>Benchmarked optimization across 10 production LLMs (1B–405B), identifying a “sweet spot”
+                                where mid-sized models yielded highest relative gains.</li>
+                            <li>Studied cross-model transferability: prompts optimized for mid-sized models generalized
+                                well to larger architectures, enabling prompt reuse.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="item-title">ML Research Intern – Nokia Bell Labs (Murray Hill, NJ)</div>
+                        <div class="item-meta">06/2025 – 08/2025</div>
+                        <ul>
+                            <li>Developed a multi-agent LLM pipeline using OPC UA to extract insights from industrial
+                                telemetry data.</li>
+                            <li>Designed hierarchical agents for high-level question generation and low-level insight
+                                extraction.</li>
+                            <li>Integrated knowledge graphs and function calling to correlate multi-layered industrial
+                                events.</li>
+                            <li>Investigated prompting strategies to enhance LLM accuracy in complex industrial NLP
+                                tasks.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="item-title">Software Developer Intern – Zippi Delivery (Stony Brook, NY)</div>
+                        <div class="item-meta">05/2024 – 08/2024</div>
+                        <ul>
+                            <li>Built AI-driven restaurant management platform using GoHighLevel MCP and LLMs for
+                                unified business operations.</li>
+                            <li>Developed multi-agent “Zippi” system with CrewAI achieving 95% task routing accuracy.
+                            </li>
+                            <li>Designed a hybrid LLM setup (Gemini + DeepSeek) cutting costs by 40% and manual oversight
+                                by 65%.</li>
+                            <li>Created webhook automation handling 10K+ social interactions daily, improving response
+                                times by 50%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Projects</h2>
+                <div class="grid">
+                    <div>
+                        <div class="item-title">SmartTutor: GraphRAG-based Learning Assistant</div>
+                        <ul>
+                            <li>Developed an AI-powered tutor leveraging GraphRAG, replacing traditional RAG with a
+                                knowledge graph for improved accuracy of 34% and enhanced interpretability.</li>
+                            <li>Processed 300 pages on Stereo Vision, generating a structured knowledge graph instead of
+                                word embeddings.</li>
+                            <li>Achieved a 2-second response time and cut user study time by 25%, simplifying complex
+                                concepts.</li>
+                            <li>Enabled real-time cache visualization, offering a transparent and explainable retrieval
+                                mechanism.</li>
+                            <li>Deployed a functional prototype using distilGPT2 with an optimized graph-based
+                                retriever.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="item-title">Language Neutralization System</div>
+                        <ul>
+                            <li>Architected real-time translation system for call centers, supporting 10+ languages with
+                                95% accuracy.</li>
+                            <li>Constructed streaming pipeline (ASR → translation → TTS), reducing processing delay by
+                                40%.</li>
+                            <li>Streamlined system for accelerated machines, yielding 30% performance boost.</li>
+                            <li>Orchestrated system deployment via Docker, minimizing setup time by 60%.</li>
+                            <li>Established API web socket, amplifying system accessibility by 80%.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="item-title">Agent Performance Platform</div>
+                        <ul>
+                            <li>Led platform development using text classification to analyze agent conversations,
+                                processing 1,000+ daily interactions.</li>
+                            <li>Fine-tuned model to attain 85% accuracy in identifying and scoring 15 distinct soft
+                                skill traits.</li>
+                            <li>Executed MLOps practices, accelerating model update time by 70% and enhancing overall
+                                accuracy by 10%.</li>
+                            <li>Boosted efficiency by 50% and reduced manual review time by 75%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Open Source Contributions</h2>
+                <ul>
+                    <li>
+                        <span class="item-title">GEPA:</span>
+                        Configurable <code>DefaultAdapter</code> evaluation returning per-example score + feedback
+                        (<a href="https://github.com/gepa-ai/gepa/pull/147" target="_blank" rel="noopener noreferrer">PR #147</a>).
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
+
+
